@@ -2,6 +2,7 @@
 // Typography
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
+
 p {
 	margin-top: 0;
 }
@@ -12,6 +13,7 @@ h3,
 h4,
 h5,
 h6 {
+	font-family: $font-family-secondary;
 	font-weight: 300;
 	margin-bottom: 2.0rem;
 	margin-top: 0;
