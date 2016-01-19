@@ -1,0 +1,4 @@
+.DS_Store
+.sass-cache
+#deploy.ini
+#git-deploy
