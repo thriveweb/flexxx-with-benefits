@@ -62,15 +62,15 @@ http://flickity.metafizzy.co
 }
 
 .flickity-prev-next-button:hover {
-  border-color: $primary-color;
+  border-color: $color-primary;
   .arrow{
-    fill: $primary-color;
+    fill: $color-primary;
   }
 }
 
 .flickity-prev-next-button:focus {
   outline: none;
-  box-shadow: 0 0 0 5px $primary-color;
+  box-shadow: 0 0 0 5px $color-primary;
 }
 
 .flickity-prev-next-button:active {
