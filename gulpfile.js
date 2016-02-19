@@ -6,7 +6,8 @@ var reload      = browserSync.reload;
 var src = {
   scss: 'scss/*.scss',
   css:  './',
-  php: '*.php'
+  php: '**/*.php',
+  js: '**/*.js'
 };
 
 // Static Server + watching scss/php files
