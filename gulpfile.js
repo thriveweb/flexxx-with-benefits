@@ -6,10 +6,10 @@ var reload      = browserSync.reload;
 var src = {
   scss: 'scss/*.scss',
   css:  './',
-  html: './*.php'
+  php: '*.php'
 };
 
-// Static Server + watching scss/html files
+// Static Server + watching scss/php files
 gulp.task('serve', ['sass'], function() {
 
   browserSync({
@@ -17,7 +17,7 @@ gulp.task('serve', ['sass'], function() {
   });
 
   gulp.watch(src.scss, ['sass']);
-  gulp.watch(src.html).on('change', reload);
+  gulp.watch(src.php).on('change', reload);
 });
 
 // Compile sass into CSS
