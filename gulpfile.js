@@ -13,7 +13,7 @@ var src = {
 gulp.task('serve', ['sass'], function() {
 
   browserSync({
-    proxy: "192.168.1.110:8888"
+    proxy: "localhost:8888"
   });
 
   gulp.watch(src.scss, ['sass']);
