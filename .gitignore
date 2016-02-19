@@ -2,3 +2,4 @@
 .sass-cache
 #deploy.ini
 #git-deploy
+node_modules
