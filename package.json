@@ -1,7 +1,7 @@
 {
-  "name": "gulp.sass",
+  "name": "Flexxx Boilerplate",
   "version": "1.0.0",
-  "description": "Gulp & SASS",
+  "description": "Flexxx Boilerplate with Sass & BrowserSync",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp"
