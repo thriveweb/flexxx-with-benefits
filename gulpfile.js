@@ -1,7 +1,7 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
+var rucksack = require('gulp-rucksack');
 var reload      = browserSync.reload;
 
 var src = {
@@ -32,10 +32,10 @@ gulp.task('sass', function() {
       browserSync.notify(err.message, 3000);
       this.emit('end');
     }))
-    .pipe(autoprefixer({
-			browsers: ['last 2 versions'],
-			cascade: true
-		}))
+    .pipe(rucksack({
+      fallbacks: true,
+      autoprefixer: true
+    }))
     .pipe(gulp.dest(src.css))
     .pipe(reload({stream: true}));
 });
