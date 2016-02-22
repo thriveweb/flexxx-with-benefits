@@ -33,7 +33,6 @@ gulp.task('sass', function() {
       this.emit('end');
     }))
     .pipe(rucksack({
-      fallbacks: true,
       autoprefixer: true
     }))
     .pipe(gulp.dest(src.css))
