@@ -1,5 +1,5 @@
 {
-  "name": "Flexxx Boilerplate",
+  "name": "Flexxx-Boilerplate",
   "version": "1.0.0",
   "description": "Flexxx Boilerplate with Sass & BrowserSync",
   "main": "gulpfile.js",
