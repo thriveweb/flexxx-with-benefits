@@ -1,5 +1,29 @@
 <?php
 
+////////////////////////////////////////////////////////
+/// Login Logo
+function my_login_logo() { ?>
+  <style type="text/css">
+    .login h1 a {
+      background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg);
+      margin: 0 auto;
+      height: 150px;
+      width: 80%;
+      background-size: contain;
+    }
+  </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+function my_login_logo_url() {
+  return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+  return get_bloginfo( 'title' );
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
 /////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////// Scale Up Small Images
 function image_crop_dimensions($default, $orig_w, $orig_h, $new_w, $new_h, $crop){
