@@ -1,197 +1,107 @@
-
-// Grid
-// ––––––––––––––––––––––––––––––––––––––––––––––––––
-
-// .container is main centered wrapper with a max width of 1120rem (1120px)
+//// Skeleton Grid
 .container {
-	box-sizing: border-box;
-	margin: 0 auto;
-	max-width: $container-width;
-	padding: 0 2.0rem;
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-// Using flexbox for the grid, inspired by Philip Walton:
-// http://philipwalton.github.io/solved-by-flexbox/demos/grids/
-// By default each .column within a .row will evenly take up
-// available width, and the height of each .column with take
-// up the height of the tallest .column in the same .row.
-.row {
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	width: 100%;
-
-	.row-wrap {
-		flex-wrap: wrap;
-	}
-
-	.row-no-padding {
-		padding: 0;
-
-		&> .column {
-			padding: 0;
-		}
-	}
-
-	// & + .row
-	// 	margin-top: -.5rem;
-	// 	padding-top: 0;
-
-	// Vertically Align Columns
-	// .row-* vertically aligns every .col in the .row
-	.row-top {
-		align-items: flex-start;
-	}
-
-	.row-bottom {
-		align-items: flex-end;
-	}
-
-	.row-center {
-		align-items: center;
-	}
-
-	.row-stretch {
-		align-items: stretch;
-	}
-
-	.row-baseline {
-		align-items: baseline;
-	}
-
-	.column {
-		display: block;
-		flex: 1;
-		margin-left: 0;
-		max-width: 100%;
-		width: 100%;
-
-		// .column-* vertically aligns an individual .column
-		.col-top {
-			align-self: flex-start;
-		}
-
-		.col-bottom {
-			align-self: flex-end;
-		}
-
-		.col-center {
-			align-self: center;
-		}
-
-		// Column Offsets
-		&.column-offset-10 {
-			margin-left: 10%;
-		}
-
-		&.column-offset-20 {
-			margin-left: 20%;
-		}
-
-		&.column-offset-25 {
-			margin-left: 25%;
-		}
-
-		&.column-offset-33,
-		&.column-offset-34 {
-			margin-left: 33.3333%;
-		}
-
-		&.column-offset-50 {
-			margin-left: 50%;
-		}
-
-		&.column-offset-66,
-		&.column-offset-67 {
-			margin-left: 66.6666%;
-		}
-
-		&.column-offset-75 {
-			margin-left: 75%;
-		}
-
-		&.column-offset-80 {
-			margin-left: 80%;
-		}
-
-		&.column-offset-90 {
-			margin-left: 90%;
-		}
-
-		// Explicit Column Percent Sizes
-		// By default each grid column will evenly distribute
-		// across the grid. However, you can specify individual
-		// columns to take up a certain size of the available area
-		&.column-10 {
-			flex: 0 0 10%;
-			max-width: 10%;
-		}
-
-		&.column-20 {
-			flex: 0 0 20%;
-			max-width: 20%;
-		}
-
-		&.column-25 {
-			flex: 0 0 25%;
-			max-width: 25%;
-		}
-
-		&.column-33,
-		&.column-34 {
-			flex: 0 0 33.3333%;
-			max-width: 33.3333%;
-		}
-
-		&.column-40 {
-			flex: 0 0 40%;
-			max-width: 40%;
-		}
-
-		&.column-50 {
-			flex: 0 0 50%;
-			max-width: 50%;
-		}
-
-		&.column-60 {
-			flex: 0 0 60%;
-			max-width: 60%;
-		}
-
-		&.column-66, &.column-67 {
-			flex: 0 0 66.6666%;
-			max-width: 66.6666%;
-		}
-
-		&.column-75 {
-			flex: 0 0 75%;
-			max-width: 75%;
-		}
-
-		&.column-80 {
-			flex: 0 0 80%;
-			max-width: 80%;
-		}
-
-		&.column-90 {
-			flex: 0 0 90%;
-			max-width: 90%;
-		}
-	}
+.column,
+.columns {
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
 }
 
-// Larger than mobile screen
-@media (min-width: 40.0rem) {
-	.row {
-		flex-direction: row;
-		margin-left: -1.0rem;
-		width: calc(100% + 2.0rem);
+// For devices larger than 400px
+@media (#{$bp-larger-than-mobile}) {
+  .container {
+    width: $container-width-larger-than-mobile;
+    padding: 0;
+  }
+}
 
-		.column {
-			margin-bottom: inherit;
-			padding: 0 1.0rem;
-		}
-	}
+// For devices larger than 550px
+@media (#{$bp-larger-than-phablet}) {
+  .container {
+    width: $container-width-larger-than-phablet;
+  }
+  .column,
+  .columns {
+    margin-left: $column-margin;
+  }
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0;
+  }
+
+  .one.column,
+  .one.columns          { width: grid-column-width(1);  }
+  .two.columns          { width: grid-column-width(2);  }
+  .three.columns        { width: grid-column-width(3);  }
+  .four.columns         { width: grid-column-width(4);  }
+  .five.columns         { width: grid-column-width(5);  }
+  .six.columns          { width: grid-column-width(6);  }
+  .seven.columns        { width: grid-column-width(7);  }
+  .eight.columns        { width: grid-column-width(8);  }
+  .nine.columns         { width: grid-column-width(9);  }
+  .ten.columns          { width: grid-column-width(10); }
+  .eleven.columns       { width: grid-column-width(11); }
+  .twelve.columns       { width: 100%; margin-left: 0;  }
+
+  .one-third.column     { width: grid-column-width(4);  }
+  .two-thirds.column    { width: grid-column-width(8);  }
+
+  .one-half.column      { width: grid-column-width(6);  }
+
+
+  // Offsets
+  .offset-by-one.column,
+  .offset-by-one.columns       { margin-left: grid-offset-length(1);  }
+  .offset-by-two.column,
+  .offset-by-two.columns       { margin-left: grid-offset-length(2);  }
+  .offset-by-three.column,
+  .offset-by-three.columns     { margin-left: grid-offset-length(3);  }
+  .offset-by-four.column,
+  .offset-by-four.columns      { margin-left: grid-offset-length(4);  }
+  .offset-by-five.column,
+  .offset-by-five.columns      { margin-left: grid-offset-length(5);  }
+  .offset-by-six.column,
+  .offset-by-six.columns       { margin-left: grid-offset-length(6);  }
+  .offset-by-seven.column,
+  .offset-by-seven.columns     { margin-left: grid-offset-length(7);  }
+  .offset-by-eight.column,
+  .offset-by-eight.columns     { margin-left: grid-offset-length(8);  }
+  .offset-by-nine.column,
+  .offset-by-nine.columns      { margin-left: grid-offset-length(9);  }
+  .offset-by-ten.column,
+  .offset-by-ten.columns       { margin-left: grid-offset-length(10); }
+  .offset-by-eleven.column,
+  .offset-by-eleven.columns    { margin-left: grid-offset-length(11); }
+
+
+  .offset-by-one-third.column,
+  .offset-by-one-third.columns  { margin-left: grid-offset-length(4);  }
+  .offset-by-two-thirds.column,
+  .offset-by-two-thirds.columns { margin-left: grid-offset-length(8);  }
+
+  .offset-by-one-half.column,
+  .offset-by-one-half.column   { margin-left: grid-offset-length(6);  }
+
+
+}
+
+// Clearing
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// Self Clearing Goodness
+
+.container:not(.flex):after,
+.row:not(.flex):after,
+.u-cf {
+  content: "";
+  display: table;
+  clear: both;
 }

@@ -9,7 +9,7 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="banner">
+	<div class="section">
 		<div class="container skinny">
 			<?php the_content();?>
 		</div>

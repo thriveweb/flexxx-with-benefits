@@ -3,7 +3,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="banner">
+	<div class="section">
 		<div class="container skinny">
 			<h1><?php the_title(); ?></h1>
 			<?php the_content();?>

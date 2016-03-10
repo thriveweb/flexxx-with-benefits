@@ -1,5 +1,5 @@
 /*
-Theme Name: Flexxx-jinks
+Theme Name: Flexxx Theme — Jinks Remix
 Author: Thrive web design
 Author URI: http://thriveweb.com.au/
 */
@@ -8,6 +8,7 @@ Author URI: http://thriveweb.com.au/
 // ––––––––––––––––––––––––––––––––––––––––––––––––––
 
 @import '_Normalize';
+@import '_Functions';
 @import '_Variables';
 @import '_Color';
 @import '_Base';
@@ -24,7 +25,9 @@ Author URI: http://thriveweb.com.au/
 @import '_Typography';
 @import '_Utility';
 
-@import "repeated";
-@import "header";
-@import "footer";
-// @import "flickity";
+@import "components/repeated";
+@import "components/header";
+@import "components/footer";
+// @import "components/flickity";
+
+@import "pages/home";
