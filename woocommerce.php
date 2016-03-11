@@ -2,7 +2,7 @@
 
 <?php include('inc-edit.php');?>
 	<div class="woo-page">
-				<?
+				<?php
 				if ( is_singular( 'product' ) ) {
 				woocommerce_content();
 				}else{
