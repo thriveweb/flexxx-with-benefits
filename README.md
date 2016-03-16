@@ -1,5 +1,5 @@
 # Flexxx with benefits
-Wordpress theme for Thrive.
+Wordpress theme for [Thrive](http://thriveweb.com.au).
 
 Benefits include:
 
